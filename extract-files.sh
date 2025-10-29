@@ -63,6 +63,9 @@ function blob_fixup() {
             "${PATCHELF_0_17_2}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             "${PATCHELF_0_17_2}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
             ;;
+        vendor/lib/libmmsw_platform.so|vendor/lib/libmmsw_detail_enhancement.so)
+            "${PATCHELF}" --remove-needed "libbinder.so" "${2}"
+            ;;
     esac
 
     # For all ELF files
