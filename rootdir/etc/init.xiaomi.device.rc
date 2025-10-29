@@ -26,7 +26,7 @@ on post-fs-data
 
 # IR
 on boot
-    chown system system /dev/peel_ir
+    chown system system /dev/lirc0
 
 # UClamp tunings
 on boot
