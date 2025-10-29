@@ -18,11 +18,14 @@ $(call inherit-product, device/xiaomi/oxygen/device.mk)
 # Kernel
 TARGET_KERNEL_VERSION := 4.9
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := oxygen
 PRODUCT_NAME := lineage_oxygen
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 5 Plus
+PRODUCT_MODEL := MI MAX 2
 PRODUCT_MANUFACTURER := Xiaomi
 
 # Build Name

@@ -16,20 +16,17 @@ persist.vendor.audio.fluence.voicerec=false
 ro.vendor.audio.sdk.fluencetype=fluence
 vendor.audio.feature.fluence.enable=true
 
-# Xiaomi vince - Camera
-persist.camera.HAL3.enabled=1
-
-# Xiaomi vince - Bluetooth
+# Xiaomi oxygen - Bluetooth
 bluetooth.le.disable_apcf_extended_features=1
-bluetooth.sco.disable_enhanced_connection=true
+bluetooth.sco.disable_enhanced_connection=1
 
-# Xiaomi vince - Encryption
+# Xiaomi oxygen - Camera
+persist.camera.HAL3.enabled=1
+persist.camera.gyro.disable=0
+
+# Xiaomi oxygen - Encryption
 ro.crypto.volume.contents_mode=aes-256-xts
 
-# Fingerprint
-persist.vendor.fingerprint.type=rear
-persist.qfp=false
-
-# Xiaomi vince - SoC
+# Xiaomi oxygen - SoC
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=MSM8953
