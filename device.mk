@@ -53,6 +53,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/oxygen/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hvdcp_opti
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshims_binder
+
 # Rootdir
 PRODUCT_PACKAGES += \
     init.xiaomi.device.rc

@@ -8,6 +8,11 @@
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib64/lib_fpc_tac_shared.so)
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_binder.so" >/dev/null; then
+                "${PATCHELF}" --add-needed "libshims_binder.so" "${2}"
+            fi
+            ;;
         vendor/lib64/libgf_hal.so)
             # Always assume screen is interactive
             sed -i -e 's|\xE6\xDB\xFF\x97\x60\x02\x00\xB9|\x20\x00\x80\xD2\x20\x00\x80\xD2|g' "${2}"
