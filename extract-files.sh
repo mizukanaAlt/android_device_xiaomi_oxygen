@@ -8,7 +8,11 @@
 
 function blob_fixup() {
     case "${1}" in
-         vendor/lib/libmmcamera2_sensor_modules.so)
+        vendor/lib/libmmsw_platform.so|vendor/lib/libmmsw_detail_enhancement.so)
+            "${PATCHELF}" --remove-needed "libbinder.so" "${2}"
+            sed -i 's|libgui.so|libwui.so|g' "${2}"
+            ;;
+        vendor/lib/libmmcamera2_sensor_modules.so)
             sed -i 's|/system/etc/camera/|/vendor/etc/camera/|g' "${2}"
             sed -i 's|data/misc/camera|data/vendor/qcam|g' "${2}"
             ;;
@@ -32,6 +36,14 @@ function blob_fixup() {
             ;;
         vendor/lib/libmmcamera2_stats_modules.so)
             sed -i 's|data/misc/camera|data/vendor/qcam|g' "${2}"
+            sed -i 's|libgui.so|libwui.so|g' "${2}"
+            "${PATCHELF}" --replace-needed "libandroid.so" "libshims_android.so" "${2}"
+            ;;
+        vendor/lib/libmmcamera_ppeiscore.so)
+            sed -i 's|libgui.so|libwui.so|g' "${2}"
+            if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_ui.so" >/dev/null; then
+                "${PATCHELF}" --add-needed "libshims_ui.so" "${2}"
+            fi
             ;;
         vendor/lib/libmpbase.so)
             "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
@@ -62,9 +74,6 @@ function blob_fixup() {
         vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
             "${PATCHELF_0_17_2}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             "${PATCHELF_0_17_2}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
-            ;;
-        vendor/lib/libmmsw_platform.so|vendor/lib/libmmsw_detail_enhancement.so)
-            "${PATCHELF}" --remove-needed "libbinder.so" "${2}"
             ;;
     esac
 

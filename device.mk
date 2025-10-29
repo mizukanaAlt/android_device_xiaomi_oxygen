@@ -55,7 +55,10 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshims_binder
+    libshims_android \
+    libshims_binder \
+    libshims_ui \
+    libwui
 
 # Rootdir
 PRODUCT_PACKAGES += \
