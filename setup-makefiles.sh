@@ -8,7 +8,7 @@
 
 set -e
 
-export DEVICE=vince
+export DEVICE=oxygen
 export DEVICE_COMMON=mithorium-common
 export VENDOR=xiaomi
 
