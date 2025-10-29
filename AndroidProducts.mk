@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_vince.mk
+    $(LOCAL_DIR)/lineage_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_vince-user \
-    lineage_vince-userdebug \
-    lineage_vince-eng
+    lineage_oxygen-user \
+    lineage_oxygen-userdebug \
+    lineage_oxygen-eng
