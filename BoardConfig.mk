@@ -14,7 +14,7 @@ include device/xiaomi/mithorium-common/BoardConfigCommon.mk
 DEVICE_PATH := device/xiaomi/oxygen
 
 # Display
-TARGET_SCREEN_DENSITY := 440
+TARGET_SCREEN_DENSITY := 342
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
