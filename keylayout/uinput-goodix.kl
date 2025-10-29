@@ -8,13 +8,9 @@
 # as published by the Free Software Foundation.
 #
 
-#key  96    DPAD_CENTER  VIRTUAL
-key  96    WAKEUP
+key  96    WAKEUP       VIRTUAL
 #key 102   HOME         VIRTUAL
-#key  102   DPAD_CENTER  VIRTUAL
-key  102   WAKEUP
+key  102   DPAD_CENTER  VIRTUAL
 #key 105   DPAD_LEFT    VIRTUAL
-key 105   WAKEUP
-#key  106   DPAD_RIGHT   VIRTUAL
-key  106   WAKEUP
+key  106   DPAD_RIGHT   VIRTUAL
 
