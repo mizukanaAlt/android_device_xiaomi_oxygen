@@ -8,6 +8,9 @@
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib/libmpbase.so)
+            "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
+            ;;
         vendor/lib64/lib_fpc_tac_shared.so)
             if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_binder.so" >/dev/null; then
                 "${PATCHELF}" --add-needed "libshims_binder.so" "${2}"
